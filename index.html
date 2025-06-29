@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="jv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Surat Khusus Saka Zen Kanggo Alya</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #1c1c3c, #2b2b4f, #000);
+      color: #eee;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      background: rgba(30, 30, 50, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .judul {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      white-space: pre-line;
+    }
+    button {
+      background: linear-gradient(135deg, #5f2c82, #49a09d);
+      color: #fff;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 30px;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+      margin-top: 10px;
+      min-width: 220px;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #302b63, #0f0c29);
+      transform: scale(1.05);
+    }
+    .popup-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+    }
+    .popup {
+      background: #2a2a4d;
+      padding: 30px 40px;
+      border-radius: 15px;
+      max-width: 350px;
+      text-align: center;
+    }
+    .popup h2 {
+      margin-bottom: 20px;
+    }
+    .popup button {
+      width: 140px;
+      margin: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay loop>
+  <source src="https://h.uguu.se/OankPHvN.mp3" type="audio/mpeg">
+</audio>
+
+<section id="step1">
+  <div class="judul">IKI SURAT KHUSUS SAKA ZEN KANGGO KOWE, ALYA</div>
+  <button id="btnLanjut1">Arep diterusno opo ora?</button>
+</section>
+
+<section id="step2" style="display:none;">
+  <h1>Critane Wi</h1>
+  <p>
+    Aku isih kelingan cetho wektu pisanan ketemu kowe.  
+    Awale mung liwat sekilas, ning kok rasane nyantol neng ati.  
+    Saka kene, aku mulai kepo sopo koe.  
+    Makin dino kok rasane makin kepincut, Alya.
+  </p>
+  <button id="btnLanjut2">Terusno</button>
+</section>
+
+<section id="step3" style="display:none;">
+  <h1>Kok Iso Tresno?</h1>
+  <p>
+    Kayane aku wes tresno karo kowe, Alya…  
+    Ora ngerti asal muasal e saka ngendi.  
+    Nanging saben bengi rasane mikir koe wae,  
+    ngono yo ngono, nanging ya ngene iki atiku.
+  </p>
+  <button id="btnLanjut3">Terusno</button>
+</section>
+
+<section id="step4" style="display:none;">
+  <h1>Pancen Wi</h1>
+  <p>
+    Kenopo kok iso tresno?  
+    Soale aku nate weruh kowe nang warung wektu maghriban.  
+    Awale ora nyadar nek iku kowe, eh pas ndelok kok kowe yo ndelok aku.  
+    Nanging aku pura-pura ora weruh, padahal salting abot tenan, Alya.
+  </p>
+  <button id="btnLanjut4">Terusno</button>
+</section>
+
+<section id="step5" style="display:none;">
+  <h1>Yo Piye, Alya?</h1>
+  <p>
+    Aku ora maksa kok, mung pengen ngerti perasaanmu.  
+    Nek aku, yo wis cetho pol nek tresno tenan.
+  </p>
+  <button id="btnLanjut5">Gelem opo Ora?</button>
+</section>
+
+<div class="popup-bg" id="popupBg">
+  <div class="popup">
+    <h2>Pilih Ndok, Alya!</h2>
+    <button onclick="terima()">Gelem</button>
+    <button onclick="tolak()">Ora Gelem</button>
+    <br/>
+    <button onclick="closePopup()" style="background:#999;color:#fff;margin-top:15px;">Mikir Sek</button>
+  </div>
+</div>
+
+<script>
+  const nomorWA = '6285182268119';
+  const step1 = document.getElementById('step1');
+  const step2 = document.getElementById('step2');
+  const step3 = document.getElementById('step3');
+  const step4 = document.getElementById('step4');
+  const step5 = document.getElementById('step5');
+  const popupBg = document.getElementById('popupBg');
+
+  document.getElementById('btnLanjut1').onclick = () => {
+    step1.style.display = 'none';
+    step2.style.display = 'block';
+  }
+  document.getElementById('btnLanjut2').onclick = () => {
+    step2.style.display = 'none';
+    step3.style.display = 'block';
+  }
+  document.getElementById('btnLanjut3').onclick = () => {
+    step3.style.display = 'none';
+    step4.style.display = 'block';
+  }
+  document.getElementById('btnLanjut4').onclick = () => {
+    step4.style.display = 'none';
+    step5.style.display = 'block';
+  }
+  document.getElementById('btnLanjut5').onclick = () => {
+    popupBg.style.display = 'flex';
+  }
+
+  function closePopup() {
+    popupBg.style.display = 'none';
+  }
+
+  function terima() {
+    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent('GASS ZEN GUA 🙏💕')}`;
+    window.location.href = url;
+  }
+
+  function tolak() {
+    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent('Alasan Menolak: ')}`;
+    window.location.href = url;
+  }
+</script>
+
+</body>
+</html>
